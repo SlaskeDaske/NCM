@@ -305,7 +305,7 @@ function portrait(id){
   });
   PCACHE[key]=c;return c;
 }
-const NAMES={neck:'Neck Cheese Man',egern:'Egern Man',badboy:'Cute Badboy',martin:'Illumartin',eivind:'Eivind',don:'The Don',cstar:'C Star',boss:'The Great Recall Turd',moon:'Månekage-monstret',moose:'Elgen',speaker:'Højttaleren'};
+const NAMES={neck:'Neck Cheese Man',egern:'Egern Man',badboy:'Cute Badboy',martin:'Illumartin',eivind:'AIvind',don:'The Don',cstar:'C Star',boss:'The Great Recall Turd',moon:'Månekage-monstret',moose:'Elgen',speaker:'Højttaleren'};
 
 /* ================= LYD ================= */
 const AC={c:null,muted:false};
@@ -388,11 +388,11 @@ const LEVELS=[
 },
 {tag:'Bane 5',short:'5/6',name:'Det mørke lager',flavor:'Lyset gik i 2021. Ingen har skiftet pæren.',turds:['pole','zip'],thp:3,npc:'eivind',dark:.94,
  map:["#############","#@..s.s.s...#","#...........#","#.s.s.s.s.T.#","#...........#","#..T....N...#","#.s.s.s.s...#","#.........F.#","######C######","#...........#","#.T.....T...#","#...........#","#####M#######","#.....E.....#","#############"],
- goal:()=>!has('eivind')?'Find ham, der råber i mørket':!G.flags.antlers?'Find noget rådden fisk til Eivind':cnt('C')?'Lad Eivind vælte kassen':cnt('M')?'Få elgen til at flytte sig':'Find udgangen',
+ goal:()=>!has('eivind')?'Find ham, der råber i mørket':!G.flags.antlers?'Find noget rådden fisk til AIvind':cnt('C')?'Lad AIvind vælte kassen':cnt('M')?'Få elgen til at flytte sig':'Find udgangen',
  intro:[['martin','Det mørke lager. Godt, jeg tog kronen med. Jeg tager den aldrig af.'],['neck','Jeg kan høre nogen, der råber ad en computer…'],['egern','Squeak. Det betyder: jeg er ikke bange. Overhovedet ikke.']],
- npcLines:[['eivind','NEI NEI NEI! Hvordan kunne han se meg i den busken?! PUBG er juks!'],['neck','Eivind? Hvad laver du her i mørket?'],['eivind','Gamer litt. Savner fjellene. Og jeg er sulten.'],['eivind','Har noen sett litt råtten fisk? Da vokser geviret mitt, og da kan jeg velte hva som helst.'],['martin','Pas på. Hvis Facebook skriver til ham, bliver han rasende.'],['eivind','JEG ER IKKE PÅ FACEBOOK.']],
+ npcLines:[['eivind','NEI NEI NEI! Hvordan kunne han se meg i den busken?! PUBG er juks!'],['neck','AIvind? Hvad laver du her i mørket?'],['eivind','Gamer litt. Savner fjellene. Og jeg er sulten.'],['eivind','Har noen sett litt råtten fisk? Da vokser geviret mitt, og da kan jeg velte hva som helst.'],['martin','Pas på. Hvis Facebook skriver til ham, bliver han rasende.'],['eivind','JEG ER IKKE PÅ FACEBOOK.']],
  npcIdle:'NEI! Ikke igjen!',
- joinMsg:'<b>Eivind</b> er med! Ny evne: PUBG-raseri. Den lades op, når I besejrer turds. Og når Facebook skriver.',
+ joinMsg:'<b>AIvind</b> er med! Ny evne: PUBG-raseri. Den lades op, når I besejrer turds. Og når Facebook skriver.',
 },
 {tag:'Bane 6',short:'6/6',name:'Perfion-serverrummet',flavor:'Her bor alle produktdata. Boede.',turds:['review','review','pole'],thp:3,
  map:["#############","#.....@.....#","#.r.r...r.r.#","#.r.r...r.r.#","#.....T.....#","#.r.r...r.r.#","#...T...T...#","######D######","#...........#","#...........#","#.....x.....#","#...........#","#...........#","#...........#","#############"],
@@ -674,7 +674,7 @@ function interact(gx,gy){
     case 's':say(pl,G.lv===6?pick(['Duty free. 4 liter parfume til 89 kr. Fristende.','Datoer, chokolade og en kamel af guld. Normal lufthavn.']):pick(['Samples. Ingen af dem er godkendt.','Hylde med telte. Én af dem drypper vist.','Lagerhylde. Den har set ting.']));break;
     case 'B':say(pl,pick(['Kasser med samples. Mærket: “HASTER!!!” fra 2022.','Der står SAMPLE på. Alt her står der SAMPLE på.']));break;
     case 'm':say(pl,pick(['En symaskine. Den syer stadig, helt af sig selv.','Her blev Turtle Turd-designet syet. Hvem godkendte det?']));break;
-    case 'k':say(pl,G.lv===9?pick(['En pizza med ananas. Ingen siger noget.','Bord 7 venter stadig på deres calzone.']):G.lv===6?pick(['Gate-sæder. Nogen sover under dem.','Der ligger en glemt nakkepude. Den lugter af Eivind.']):G.lv===8?pick(['Hotelbord. Der står en kokosnød med sugerør.','En menu på vietnamesisk. Der er tegnet en elg på bagsiden.']):pick(['Et bord med en kold kop kaffe og et Excel-ark.','Mødebord. Der står “Glem Illustrator, glem Excel” på en post-it.']));break;
+    case 'k':say(pl,G.lv===9?pick(['En pizza med ananas. Ingen siger noget.','Bord 7 venter stadig på deres calzone.']):G.lv===6?pick(['Gate-sæder. Nogen sover under dem.','Der ligger en glemt nakkepude. Den lugter af AIvind.']):G.lv===8?pick(['Hotelbord. Der står en kokosnød med sugerør.','En menu på vietnamesisk. Der er tegnet en elg på bagsiden.']):pick(['Et bord med en kold kop kaffe og et Excel-ark.','Mødebord. Der står “Glem Illustrator, glem Excel” på en post-it.']));break;
     case 'r':say(pl,pick(['En Perfion-server. Den lyser bekymret.','Serveren summer. Den har det ikke godt.','På skærmen står der bare 💩💩💩.']));break;
     case 'P':{
       const mt=member('martin');
@@ -885,7 +885,7 @@ function update(dt){
   // facebook
   const ev=member('eivind');
   if(ev){if(ev.stunT>0)ev.stunT-=dt;G.fbT-=dt;if(G.fbT<=0){G.fbT=28+rnd()*22;sfx.notif();ev.stunT=2.5;G.rage=Math.min(100,G.rage+35);
-    toast('<b>Facebook:</b> '+pick(['Eivind, du har 3 nye venneanmodninger.','Eivind, nogen har tagget dig i et billede fra julefrokosten.','Eivind, det er 7 år siden, du sidst loggede ind.','Eivind, din mor har delt et opslag om fjeldene.','Eivind, du har en ny påmindelse: “Fødselsdag i dag!”']),3200,'fb');
+    toast('<b>Facebook:</b> '+pick(['AIvind, du har 3 nye venneanmodninger.','AIvind, nogen har tagget dig i et billede fra julefrokosten.','AIvind, det er 7 år siden, du sidst loggede ind.','AIvind, din mor har delt et opslag om fjeldene.','AIvind, du har en ny påmindelse: “Fødselsdag i dag!”']),3200,'fb');
     G.evs.push({t:.6,fn:()=>say(ev,'JEG ER IKKE PÅ FACEBOOK!',2)})}}
   for(const f of G.foes){if(f.dead||f.boss||G.seen[f.type])continue;if(Math.hypot(f.x-G.player.x,f.y-G.player.y)<4.2){G.seen[f.type]=true;toast(`Ny fjende: <b>${TT[f.type].name}</b> – ${TT[f.type].desc}`,3600)}}
   const g=G.def.goal();if(g!==lastGoal){lastGoal=g;$('#goal').innerHTML=g;measureHud()}
@@ -1392,12 +1392,12 @@ function showTitle(){
   screen(`<div class="card">
     <canvas id="tcv" width="120" height="116"></canvas>
     <h1>Neck Cheese Man</h1>
-    <p class="sub">og Turtle Turd-fabrikken</p>
+    <p class="sub">og Teltfabrikken</p>
     <span class="new">Nyt: Akt 2 og Akt 3</span>
     <div class="btns">${cl?`<button class="px main" data-act="cont">Fortsæt · ${cl}</button>`:''}
       <button class="px ${cl?'alt':'main'}" data-act="new">Nyt spil · Akt 1</button>
       ${a1?`<button class="px act" data-act="play2">Akt 2 · Rejsen mod Østen<small>SIDE-SCROLLER</small></button>`:''}
-      ${a2?`<button class="px act" data-act="play3">Akt 3 · Stage-Gate<small>ENDLESS RUNNER</small></button>`:''}
+      ${a2?`<button class="px act" data-act="play3">Akt 3 · Den virkelige verden<small>ENDLESS RUNNER</small></button>`:''}
       ${a3?`<button class="px act" data-act="endless">Endless-løb<small>REKORD: ${fmt(eb)} POINT</small></button>`:''}
       ${location.hash==='#dev'?'<button class="px alt" data-act="dev">Udvikler: vælg bane</button>':''}
     </div>
@@ -1479,7 +1479,7 @@ const ACT={
       ${LEVELS.map((l,i)=>b('1:'+i,'Akt 1 · '+l.name)).join('')}
       ${[0,1,2,3,4].map(i=>b('2:'+i,'Akt 2 · '+NCM.a2.name(i))).join('')}
       ${[0,1,2,3,4].map(i=>b('3:'+i,'Akt 3 · '+NCM.a3.name(i))).join('')}${b('3:e','Akt 3 · Endless')}
-      ${[['measure','Mål samplet'],['tent','Lap teltet'],['pressure','Vandsøjletest'],['perfion','Perfion-sletning'],['pizza','Pizza'],['jacuzzi','Jacuzzi'],['karaoke','Karaoke']].map(([k,t])=>b('m:'+k,'Minispil · '+t)).join('')}
+      ${[['measure','Mål samplet'],['bagage','Bagagebåndet'],['tent','Lap teltet'],['pressure','Vandsøjletest'],['perfion','Perfion-sletning'],['pizza','Pizza'],['jacuzzi','Jacuzzi'],['karaoke','Karaoke']].map(([k,t])=>b('m:'+k,'Minispil · '+t)).join('')}
       <button class="px main" data-act="title">Tilbage</button></div></div>`)},
   devcomp(){G.companion=(G.companion||store.get('ncm_comp','')||'don')==='don'?'cstar':'don';store.set('ncm_comp',G.companion);ACT.dev()},
   devgo(arg){const [a,v]=arg.split(':');G.stats=freshStats();G.companion=G.companion||store.get('ncm_comp','')||'don';G.score=0;hideScreen();
@@ -1499,6 +1499,60 @@ function setMuteIcon(){$('#mute').textContent=AC.muted?'×':'♪';$('#mute').sty
 $('#mute').addEventListener('click',e=>{e.stopPropagation();audio();AC.muted=!AC.muted;store.set('ncm_mute',AC.muted?'1':'0');setMuteIcon()});
 setMuteIcon();
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&G.state==='play')showMenu()});
+
+/* ================= MUSIK (chiptune, samme stil som traileren) ================= */
+const MUS={track:null,want:null,next:0,step:0,bus:null,noise:null,lastTick:0};
+const CH=[[57,60,64],[53,57,60],[48,52,55],[55,59,62]],BS=[45,41,36,43];
+const M1=[76,0,74,76,79,0,76,74, 72,0,72,74,76,0,72,0, 72,0,71,72,74,0,72,71, 67,0,69,71,74,0,71,0];
+const M2=[81,0,79,76,79,81,0,76, 77,0,76,72,74,0,72,0, 76,0,74,72,74,76,0,79, 79,0,78,79,83,0,79,0];
+const BCH=[[57,60,64],[50,53,57],[52,56,59],[57,60,64]],BBS=[45,38,40,45];
+const MB=[69,72,76,72,69,0,68,69, 74,0,72,74,77,0,74,72, 76,0,75,76,80,0,76,74, 72,71,69,0,69,0,0,0];
+const TRK={
+  title:{bpm:100,ch:CH,bs:BS,mel:null,arp:1,dr:0},
+  a1:{bpm:118,ch:CH,bs:BS,mel:M1,arp:0,dr:1},
+  a2:{bpm:126,ch:CH,bs:BS,mel:M2,arp:1,dr:1},
+  a3:{bpm:134,ch:CH,bs:BS,mel:M2,arp:1,dr:2},
+  boss:{bpm:138,ch:BCH,bs:BBS,mel:MB,arp:1,dr:2},
+  mini:{bpm:112,ch:CH,bs:BS,mel:null,arp:1,dr:3},
+};
+const nf=m=>440*Math.pow(2,(m-69)/12);
+function musInit(){const c=AC.c;MUS.bus=c.createGain();MUS.bus.gain.value=.5;MUS.bus.connect(c.destination);
+  const n=c.createBuffer(1,c.sampleRate*.25,c.sampleRate),d=n.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;MUS.noise=n}
+function mOsc(type,f,t,dur,vol){const c=AC.c,o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.008);g.gain.setValueAtTime(vol,t+Math.max(.01,dur-.04));g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(MUS.bus);o.start(t);o.stop(t+dur+.02)}
+function mNoise(t,dur,vol,hp){const c=AC.c,s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=MUS.noise;f.type='highpass';f.frequency.value=hp;g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(f);f.connect(g);g.connect(MUS.bus);s.start(t);s.stop(t+dur+.02)}
+function mKick(t,vol){const c=AC.c,o=c.createOscillator(),g=c.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(45,t+.12);g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0001,t+.2);o.connect(g);g.connect(MUS.bus);o.start(t);o.stop(t+.22)}
+function mStep(T,i,t){
+  const E=30/T.bpm,bar=(i>>3)%4,b=i%8,ch=T.ch[bar];
+  if(T.dr===1||T.dr===2){if(b===0||b===4||(T.dr===2&&b===6))mKick(t,.5);if(b===2||b===6)mNoise(t,.13,.16,900);mNoise(t,.035,b%2?.05:.035,6000);if(T.dr===2)mNoise(t+E/2,.02,.025,7000)}
+  if(T.dr===3){mNoise(t,.03,b%2?.035:.02,6000);if(b===0)mKick(t,.25)}
+  if(T.dr===0&&b===0)mKick(t,.18);
+  mOsc('triangle',nf(T.bs[bar]+(b===3||b===7?12:0)),t,E*.85,.11);
+  if(b===0)for(const m of ch)mOsc('triangle',nf(m+12),t,E*8*.95,.018);
+  if(T.mel){const k=i%32,m=T.mel[k];if(m){const long=!T.mel[(k+1)%32];mOsc('square',nf(m),t,E*(long?1.8:.9),.03)}}
+  if(T.arp)mOsc('square',nf(ch[b%3]+24+(T.dr===0&&b>=4?-12:0)),t,E*.5,T.mel?.01:.02);
+}
+function musWant(){
+  if(document.hidden||AC.muted)return null;const s=G.state;
+  if(s==='title'||s==='evo'||s==='win'||s==='end')return 'title';
+  if(s==='menu'||s==='dead')return null;
+  if(s==='mini')return 'mini';
+  if(G.mode==='a2'){const S=NCM.a2&&NCM.a2._S&&NCM.a2._S();return S&&S.st&&S.st.boss?'boss':'a2'}
+  if(G.mode==='a3')return 'a3';
+  if(s==='card'||s==='choice')return MUS.track||'title';
+  return G.bossActive?'boss':'a1';
+}
+function musTick(){
+  const c=AC.c;if(!c||c.state!=='running')return;if(!MUS.bus)musInit();
+  const w=musWant();
+  if(w!==MUS.track){if(!w){MUS.track=null;MUS.bus.gain.setTargetAtTime(0,c.currentTime,.05)}
+    else if(!MUS.track||MUS.step%8===0){MUS.track=w;MUS.step=0;MUS.next=Math.max(MUS.next,c.currentTime+.05);MUS.bus.gain.setTargetAtTime(.5,c.currentTime,.05)}}
+  if(!MUS.track)return;const T=TRK[MUS.track];
+  if(MUS.next<c.currentTime-.2)MUS.next=c.currentTime+.05;
+  while(MUS.next<c.currentTime+.18){mStep(T,MUS.step,MUS.next);MUS.next+=30/T.bpm;MUS.step++;
+    if(MUS.track!==musWant()&&MUS.step%8===0)break}
+}
+setInterval(()=>{try{musTick()}catch(e){}},60);
+addEventListener('pointerdown',()=>{if(!AC.c||AC.c.state!=='running')audio()},{passive:true});
 
 /* ================= LOOP ================= */
 let last=performance.now();
@@ -1529,7 +1583,7 @@ resize();
 loadLevel(0);G.player.x=-50;
 if(document.readyState==='loading')addEventListener('DOMContentLoaded',showTitle);else showTitle();
 requestAnimationFrame(loop);
-window.__G=G;window.__ACT=ACT;window.__LEVELS=LEVELS;window.__tap=onTap;window.__MG=MG;window.__showCard=showCard;window.__interact=interact;
+window.__G=G;window.__MUS=MUS;window.__ACT=ACT;window.__LEVELS=LEVELS;window.__tap=onTap;window.__MG=MG;window.__showCard=showCard;window.__interact=interact;
 
 if(document.querySelector('link[rel="manifest"]')&&'serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
 })();
@@ -1724,6 +1778,40 @@ N.MSK.jacuzzi={kind:'custom',title:'Jacuzzi-damp',
     timebar(a,r);
   }
 };
+
+/* ---------- Bagagebåndet (akt 2, Dhaka) ---------- */
+const BRANDS2=['COLEBOY','VANGER','KAMPO','NORDISH','WAUHDE','QUEPASSA','HILLEMÆND','MAGASR'];
+N.MSK.bagage={kind:'custom',title:'Bagagebåndet',
+  help:'Tryk på Oase-kufferterne, når de kører forbi. Lad konkurrenternes være. De ligner hinanden til forveksling.',
+  init(a){a.dur=17;a.bags=[];a.sT=.3;a.hit=0;a.wrong=0;a.miss=0;a.fl=[];a.belt=0},
+  update(a,dt){
+    const score=()=>clamp(a.hit*9-a.wrong*9-a.miss*4,0,100);
+    if(a.pt>=a.dur){N.mgFinish(Math.round(score()));return}
+    const v=24+a.pt*1.6;a.belt+=v*dt;
+    a.sT-=dt;if(a.sT<=0){a.sT=.62+rnd()*.5-a.pt*.012;const oase=rnd()<.48;
+      a.bags.push({x:172,lane:rnd()<.5?0:1,oase,brand:oase?'OASE':pick(BRANDS2),col:oase||rnd()<.55?pick(['#e0782e','#d06a26','#e8862e']):pick(['#3b6fd8','#2a8a5a','#7a4a9a','#b03030']),w:20+((rnd()*6)|0),wob:rnd()*6})}
+    for(const b of a.bags){b.x-=v*dt*(b.lane?1:.86);if(b.x<-26&&!b.gone){b.gone=true;if(b.oase){a.miss++;$('#mgmsg').textContent='Den kører en tur til…';sfx.bad()}}}
+    a.bags=a.bags.filter(b=>!b.gone);for(const f of a.fl)f.life-=dt;a.fl=a.fl.filter(f=>f.life>0);pts(score());
+  },
+  tap(a,x,y){
+    let best=null,bd=1e9;for(const b of a.bags){const by=b.lane?78:60;if(x>b.x-3&&x<b.x+b.w+3&&y>by-12&&y<by+16){const d=Math.abs(x-(b.x+b.w/2))+Math.abs(y-by);if(d<bd){bd=d;best=b}}}
+    if(!best)return;best.gone=true;const by=best.lane?78:60;
+    if(best.oase){a.hit++;sfx.good();a.fl.push({x:best.x+best.w/2,y:by-6,t:'+9',c:'#7CFC00',life:.6});$('#mgmsg').textContent=pick(['Vores! Samples i sikkerhed.','Oase-kuffert reddet.','Den med teltstængerne!'])}
+    else{a.wrong++;sfx.bad();a.fl.push({x:best.x+best.w/2,y:by-6,t:'−9',c:'#ff5a5a',life:.7});$('#mgmsg').textContent=`Hov, det er ${best.brand}s kuffert!`}
+  },
+  draw(a,c,r,T){
+    r(0,0,160,120,'#d8d2c4');for(let x=0;x<160;x+=20)r(x,0,10,40,'#cfc8b8');r(0,38,160,4,'#a8a090');
+    r(44,6,72,12,'#1b1420');c.font=`900 6px ${UIF}`;c.textAlign='center';c.fillStyle='#f6c431';c.fillText('BÅND 4 · DXB→DAC',80,14);
+    // bånd
+    r(0,50,160,46,'#3a3a44');for(let i=0;i<2;i++){const y=i?78:60;r(0,y+10,160,6,'#55555f');for(let x=-((a.belt*(i?1:.86))%10);x<160;x+=10)r(x,y+10,1,6,'#2a2a32')}
+    r(0,96,160,24,'#8a8478');
+    for(const b of [...a.bags].sort((p,q)=>p.lane-q.lane)){const y=(b.lane?78:60)+Math.sin(T*8+b.wob)*.5;
+      r(b.x,y-6,b.w,16,b.col);r(b.x,y-6,b.w,2,'rgba(255,255,255,.25)');r(b.x+b.w/2-4,y-9,8,2,'#2a2a32');r(b.x+b.w/2-4,y-9,1,4,'#2a2a32');r(b.x+b.w/2+3,y-9,1,4,'#2a2a32');
+      r(b.x+2,y+1,b.w-4,6,'#fff4dc');c.font=`900 ${b.brand.length>7?3.6:4.4}px ${UIF}`;c.textAlign='center';c.fillStyle=b.oase?'#2a8a3a':'#1b1420';c.fillText(b.brand,b.x+b.w/2,y+5.6)}
+    c.font=`900 7px ${UIF}`;for(const f of a.fl){c.globalAlpha=clamp(f.life*2,0,1);c.fillStyle=f.c;c.fillText(f.t,f.x,f.y-(1-f.life)*10)}c.globalAlpha=1;
+    timebar(a,r);
+  }
+};
 addEventListener('pointerup',()=>{const a=N.MG.a;if(a&&a.S.release&&a.phase==='play')a.S.release(a)});
 })();
 
@@ -1797,7 +1885,7 @@ const TH={
 };
 
 /* ---------- replikker ---------- */
-const PROLOGUE=[['neck','Akt 2. Rejsen mod Østen.'],['neck','Martin, Eivind og Egern Man tog det tidlige fly. Vi mødes til månefestivalen.']];
+const PROLOGUE=[['neck','Akt 2. Rejsen mod Østen.'],['neck','Martin, AIvind og Egern Man tog det tidlige fly. Vi mødes til månefestivalen.']];
 const INTRO=[
  [['speaker','Final call for passenger Cheese Man. Gate 12. Boarding closes soon.'],['neck','Gate 12 ligger i den anden ende af lufthavnen. Selvfølgelig gør den det.'],
   cl('Bare løb. Tryk for at hoppe, og hold for at hoppe højere. Min kasket klarer turds’ene.','Tryk for at hoppe, og hold for at hoppe højere. Når jeg scanner, bliver de blå dataplatforme faste.'),
@@ -2017,19 +2105,20 @@ function missFlight(){
     ()=>{N.addScore(-100);N.toast('Overnatning i Dubai: <b>−100</b> point',3000);card(1)});
 }
 function after(i){
-  if(i===0)N.dialog([['speaker','Welcome aboard. Next stop: Dhaka.'],['neck','Vi nåede det. Med nul sekunders margin. Som altid.']],()=>card(1));
+  if(i===0)N.dialog([['speaker','Welcome aboard. Next stop: Dhaka.'],['neck','Vi nåede det. Med nul sekunders margin. Som altid.'],['neck','…Og nu står vi ved bagagebåndet i Dhaka. Alle kufferterne er orange.'],cl('Find vores. Hurtigt. Før Coleboy tager dem.','Vores har Oase-mærke. Jeg har lavet et regneark over dem.')],
+    ()=>N.minigame('bagage',sc=>{N.addScore(sc);N.dialog([['neck',sc>=60?'Alle samples er med. Og kun vores egne.':'Vi har vist taget en Coleboy-kuffert med. Den lugter af grill.']],()=>card(1))}));
   else if(i===1)N.dialog([['neck','Klokken er 21. Vi har set 14 samples og 3 lynlåse.'],cl('Og nu skal vi ud og spise pizza. Det er tradition.','Pizza står i rejseplanen. Fane 17.'),['neck','Jeg skal bare holde mig vågen. Og svare på spørgsmål. Hvor svært kan det være?']],
     ()=>N.minigame('pizza',sc=>{N.addScore(sc);N.dialog([['neck',sc>=60?'Jeg holdt mig vågen. Og svarede rigtigt. Næsten.':'Jeg sov vist lidt. Og svarede “skål” til et spørgsmål om deadlines.']],()=>card(2))}));
   else if(i===2)N.dialog([['neck','Hotellet har jacuzzi på taget.'],cl('Jeg bliver ved baren.','Jeg har målt vandet: 38,5 grader. Optimalt.'),['egern','SQUEAK! Jeg nåede det! Jacuzzi!'],['neck','Der sidder også en anden i badet. Med briller. Hvem er det?'],['neck','Damp og bobler skal være helt rigtige. Ellers kan jeg ikke se hende. Og Egern Man vil have nødder.']],
-    ()=>N.minigame('jacuzzi',sc=>{N.addScore(sc);N.dialog([['neck','Hun forsvandt i dampen. Men der er karaoke i lobbyen!'],cl('Jeg synger ikke. Okay, én sang.','Jeg har lavet en playliste med 214 sange.')],
-      ()=>N.minigame('karaoke',sc2=>{N.addScore(sc2);N.dialog([['neck',sc2>=60?'Hanoi har aldrig hørt noget lignende.':'Det var en kunstnerisk fortolkning.']],()=>card(3))}))}));
-  else if(i===3)N.dialog([['neck','Der ligger en månekage på hotelsengen. Med en seddel.'],['neck','“Månefestival i aften. Kom alene. – M.”'],cl('Vi kommer ikke alene. Det er ikke pragmatisk.','M? Der er 41 personer i Perfion, hvis navn starter med M.')],()=>card(4));
+    ()=>N.minigame('jacuzzi',sc=>{N.addScore(sc);N.dialog([['neck','Hun forsvandt i dampen. Hvem var hun?'],cl('Glem det. I morgen går turen til Shenzhen.','Ifølge rejseplanen: Shenzhen i morgen. Fane 18.')],()=>card(3))}));
+  else if(i===3)N.dialog([['neck','Shenzhen. Hotellet har karaoke i lobbyen.'],cl('Jeg synger ikke. Okay, én sang.','Jeg har lavet en playliste med 214 sange.')],
+    ()=>N.minigame('karaoke',sc=>{N.addScore(sc);N.dialog([['neck',sc>=60?'Shenzhen har aldrig hørt noget lignende.':'Det var en kunstnerisk fortolkning.'],['neck','Der ligger en månekage på hotelsengen. Med en seddel.'],['neck','“Månefestival i aften. Kom alene. – M.”'],cl('Vi kommer ikke alene. Det er ikke pragmatisk.','M? Der er 41 personer i Perfion, hvis navn starter med M.')],()=>card(4))}));
 }
 function endAct(){
   N.store.set('ncm_a2done','1');N.saveProg('3',0);N.showHud(false);G.state='card';
   N.screen(`<div class="card"><span class="eyebrow">Akt 2 gennemført</span><h2>Portalen står åben</h2>
     <div class="row"><canvas data-p="neck" width="32" height="32"></canvas><canvas data-p="${comp()}" width="32" height="32"></canvas><canvas data-p="moon" width="32" height="32"></canvas></div>
-    <p>Månekage-monstret er besejret. Bag portalen venter Stage-Gate: Foresight, Bronze, Sølv, Guld og Launch.</p>
+    <p>Månekage-monstret er besejret. Bag portalen venter den virkelige verden: Foresight, Bronze, Sølv, Guld og Launch.</p>
     <p class="rec">${fmt(G.score)} point</p><div class="btns"><button class="px main" data-act="a2next">Videre til akt 3</button></div></div>`);
   N.ACT.a2next=()=>{N.hideScreen();N.a3.start(0)};
 }
@@ -2198,7 +2287,7 @@ N.a2={
 
 </script>
 <script>
-/* AKT 3: Stage-Gate som idétragt – endless runner med færre og færre spor */
+/* AKT 3: Den virkelige verden (stage-gate) som idétragt – endless runner med færre og færre spor */
 (()=>{
 'use strict';
 const N=window.NCM,G=N.G,$=N.$,{sfx,tone,rnd,pick,clamp,UIF,fmt}=N;
@@ -2261,12 +2350,12 @@ const OUTRO=[
  [['seer','Fremtiden ser lys ud. Bronze-mødet venter.']],
  [['speaker','Idéerne er godkendt. Næsten. Videre til Sølv-mødet.']],
  [['eivind','Benchmarks smadret.'],['speaker','Videre til Guld-mødet.']],
- [['caesar','…'],['caesar','Tommel op.'],['caesar','Velkommen til den virkelige verden.'],['speaker','Launch om 32 sekunder. Sporene skifter mellem tre, to og ét. Raketten venter ikke.'],['neck','Og alle kollegerne har spørgsmål. Selvfølgelig har de det.']],
+ [['caesar','…'],['caesar','Tommel op.'],['caesar','Velkommen til den virkelige verden.'],['speaker','Launch om 32 sekunder. Sporene hopper fra side til side. Raketten venter ikke.'],['neck','Og alle kollegerne har spørgsmål. Selvfølgelig har de det.']],
 ];
 const HELP={
  martin:{name:'Illumartin',msg:'Lumen-Master! Nu kan vi se fremtiden.'},
  egern:{name:'Egern Man',msg:'Squeak! Nøddemagnet! Al osten er min. Og jeres.'},
- eivind:{name:'Eivind',msg:'PUBG-RASERI! Jeg smadrer alt!'},
+ eivind:{name:'AIvind',msg:'PUBG-RASERI! Jeg smadrer alt!'},
  don:{name:'The Don',msg:'Hold fast. Nu springer vi over alt.'},
  cstar:{name:'C Star',msg:'Jeg har hacket to ekstra spor. Ingen forhindringer derude.'},
 };
@@ -2415,7 +2504,7 @@ function begin(zi,opts){
   if(!R.endless)N.saveProg('3',zi);
   G.state='play';requestAnimationFrame(N.measureHud);
   let lines=opts.skip||R.endless?[]:INTRO[zi];
-  if(!opts.skip&&zi===0&&!R.endless&&opts.fresh)lines=[['neck','Portalen sendte os… ind i et mødelokale?'],['speaker','Velkommen til Stage-Gate. Første punkt på dagsordenen: Foresight.']].concat(lines);
+  if(!opts.skip&&zi===0&&!R.endless&&opts.fresh)lines=[['neck','Portalen sendte os… ind i et mødelokale?'],['speaker','Velkommen til den virkelige verden. Her starter alt med et stage-gate-møde. Første punkt: Foresight.']].concat(lines);
   const go=()=>{R.go=true;R.tut=zi===0||R.endless?7:0};
   if(lines.length)N.dialog(lines,go);else go();
   hud(1);
@@ -2438,7 +2527,7 @@ function finale(){
   store.set('ncm_a3done','1');store.set('ncm_act','');
   const secs=Math.round((performance.now()-G.stats.t0)/1000),rk=N.rank(sc);
   const txt=`Jeg fik ${fmt(sc)} point i Neck Cheese Man og blev "${rk}". Kan du slå det?`;
-  N.screen(`<div class="card"><span class="eyebrow">Launch gennemført</span><h2>Velkommen til den virkelige verden</h2>
+  N.screen(`<div class="card"><span class="eyebrow">Launch gennemført</span><h2>Ude i den virkelige verden</h2>
     <div class="row"><canvas data-p="neck" width="32" height="32"></canvas><canvas data-p="egern" width="32" height="32"></canvas><canvas data-p="martin" width="32" height="32"></canvas><canvas data-p="eivind" width="32" height="32"></canvas><canvas data-p="${comp()}" width="32" height="32"></canvas></div>
     <p>Alle produkter er live. Raketten er på vej. Fortsættelse følger… måske.</p>
     <div class="stats"><span>Rang</span><b>${rk}</b><span>Tid</span><b>${Math.floor(secs/60)}:${String(secs%60).padStart(2,'0')}</b><span>Turds besejret</span><b>${G.stats.kills}</b><span>Minispil spillet</span><b>${G.stats.games}</b><span>Besvimelser</span><b>${G.stats.falls}</b><span class="tot">Point</span><b class="tot">${fmt(sc)}</b></div>
@@ -2566,7 +2655,7 @@ function key(e){const m={ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'r
 function card(zi){
   N.showHud(false);G.state='card';G.mode='a3';R=null;
   const z=Z[zi];
-  N.screen(`<div class="card"><span class="eyebrow">Akt 3 · Stage-Gate</span><h2>${z.name}</h2><p>${z.flavor}</p>
+  N.screen(`<div class="card"><span class="eyebrow">Akt 3 · Den virkelige verden</span><h2>${z.name}</h2><p>${z.flavor}</p>
     <div class="row"><canvas data-p="${zi===0?'seer':zi===3?'caesar':zi===4?'colleague':'neck'}" width="32" height="32"></canvas></div>
     <ul class="how"><li>Swipe til siderne for at skifte spor</li><li>Swipe op for at hoppe, ned for at dukke dig</li><li>Swipe op under en gylden krog for at svinge</li><li>Saml hjælperne op på banen</li></ul>
     <p class="rec">${fmt(G.score)} point</p><div class="btns"><button class="px main" data-act="a3go">Videre</button></div></div>`);
